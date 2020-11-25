@@ -9,8 +9,16 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+      id 'jacoco'
 }
+jacoco {
+  // JaCoCo 버전
+  toolVersion = '0.8.5'
 
+//  테스트결과 리포트를 저장할 경로 변경
+//  default는 "${project.reporting.baseDir}/jacoco"
+//  reportsDir = file("$buildDir/customJacocoReportDir")
+}
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
