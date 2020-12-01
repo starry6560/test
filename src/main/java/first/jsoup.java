@@ -15,9 +15,9 @@ public class jsoup {
         Connection.Response loginForm = Jsoup.connect("http://tsquare.duckdns.org:8085/login")
         		.timeout(60000)
                 .method(Connection.Method.GET)
-                .execute(); 
+                .execute();  
 
-        
+
             Connection.Response mainPage = Jsoup.connect("http://tsquare.duckdns.org:8085/j_acegi_security_check")
             		.userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36")
                     .header("scheme", "https")
@@ -31,7 +31,7 @@ public class jsoup {
 		    		.data("j_password", "1q2w3e4r")
 	        		.timeout(60000)
                 .cookies(loginForm.cookies())
-                .method(Connection.Method.POST).execute(); 
+                .method(Connection.Method.POST).execute();
 //            System.out.println(mainPage.parse());
 
             System.out.println(loginForm.cookies());
@@ -56,14 +56,14 @@ public class jsoup {
             int start = evaluationPage.toString().indexOf("\"result\"");
             int end = evaluationPage.toString().indexOf(",\"timestamp\"");
             String finals= evaluationPage.toString().substring(start,end);
-            
+
             if(finals.indexOf("FAILURE")!=-1) {
             	System.out.println("Fail");
             }
-            
+
             System.out.println(finals);
-            
-            
+
+
 	}
 
 }
