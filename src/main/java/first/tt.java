@@ -9,11 +9,11 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class tt {
+public class tt { 
 
 	public static void main(String[] args) throws IOException {
 		 OkHttpClient client = new OkHttpClient();
-		 
+
 		    String met = new String("");
 		    String message = new String("");
 		    String final_message = new String("");
@@ -26,12 +26,12 @@ public class tt {
 			.add("j_username", "francis_shin")
 			.add("j_password", "1q2w3e4r")
 			.build();
-		    
+
 		    Response response = client.newCall(new Request.Builder()
 		    	      .url(requestURL3)
 		    	      .get()
 		    	      .build()).execute();
-		    
+
 		    Response response2 = client.newCall(new Request.Builder()
 		    	      .url(requestURL2)
 		    	      .get()
@@ -40,23 +40,23 @@ public class tt {
 //	        Connection.Response loginForm = Jsoup.connect("http://tsquare.duckdns.org:8085/login")
 //	                .method(Connection.Method.GET)
 //	                .execute();
-//		    
-//		    
-//		    
-		    
-		    
+//
+//
+//
+
+
 		    try {
 
 
 		        final_message = response2.body().string();
-		        
+
 		        System.out.println(final_message.toString());
 
 		      } catch(Exception e){
 
 		        System.err.println(e.toString());
 
-		        final_message = "Jenkins Á¤º¸°¡ ºñ¾îÀÖ°Å³ª Àß¸øµÇ¾ú½À´Ï´Ù.";
+		        final_message = "Jenkins ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö°Å³ï¿½ ï¿½ß¸ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
 
 		        // final_message = requestURL;
 
